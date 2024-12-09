@@ -1,5 +1,29 @@
 {
+    "name": "deemru/unitsbridge",
+    "description": "Units.Network Native Bridge",
+    "keywords": [ "wavesplatform" ],
+    "homepage": "http://github.com/deemru/UnitsBridge",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitrii Pichulin",
+            "email": "deem@deem.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "deemru\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "@php test/selftest.php"
+        ]
+    },
     "require": {
-        "deemru/unitskit": "^1.0"
+        "php": ">=7.4",
+        "deemru/unitskit": "^1.0",
+        "deemru/waveskit": "^1.0"
     }
 }
