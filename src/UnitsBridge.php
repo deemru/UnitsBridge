@@ -110,7 +110,10 @@ class UnitsBridge
                 if( $finalizedHeight === false )
                     return false;
             }
-            $headInfo = $wk->getData( 'chain_00000000', $unitDapp );
+            $mainChainId = $wk->getData( 'mainChainId', $unitDapp );
+            if( $mainChainId === false )
+                $mainChainId = 0;
+            $headInfo = $wk->getData( 'chain_' . str_pad( strval( $mainChainId ), 8, '0', STR_PAD_LEFT ), $unitDapp );
             if( $headInfo === false )
                 return false;
             $headHeight = intval( explode( ',', $headInfo )[0] );
